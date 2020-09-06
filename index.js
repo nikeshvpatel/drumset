@@ -9,12 +9,15 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
     var buttonInnerHTML = this.innerHTML;
 
     makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML);
   }
 }
 
 document.addEventListener("keydown", function(event) {
 
   makeSound(event.key);
+  buttonAnimation(event.key);
 
 });
 
@@ -64,4 +67,19 @@ function makeSound(key) {
     default:
       console.log(buttonInnerHTML);
   }
+}
+
+function buttonAnimation(paraKey){
+
+var keyvalue=document.querySelector("."+paraKey);
+keyvalue.classList.add("pressed");
+
+// setTimeout(function(){keyvalue.classList.remove("pressed");}, 100);
+
+setTimeout(Nikesh, 100);
+
+function Nikesh(){
+  keyvalue.classList.remove("pressed");
+}
+
 }
